@@ -2,7 +2,7 @@ import { Text, Button, Flex } from "@chakra-ui/react";
 import React, { Suspense, useState } from "react";
 import {Link} from 'react-router-dom';
 
-const CounterAppTwo = React.lazy(() => import("app2/CounterAppTwo"));
+// const CounterAppTwo = React.lazy(() => import("app2/CounterAppTwo"));
 const Counter = () => {
   const [count, setCount] = useState(0);
   

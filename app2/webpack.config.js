@@ -16,6 +16,7 @@ module.exports = (env, argv) =>  {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
+      historyApiFallback: true,
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],

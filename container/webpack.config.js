@@ -9,6 +9,7 @@ const buildDate = new Date().toLocaleString();
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
+
   return {
     entry: "./src/index.ts",
     mode: process.env.NODE_ENV || "development",
@@ -18,6 +19,7 @@ module.exports = (env, argv) => {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
+      historyApiFallback: true,
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
