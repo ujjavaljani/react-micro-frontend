@@ -1,0 +1,5 @@
+export const SET_APP1_COUNT = 'SET_APP1_COUNT';
+
+
+/*GLOBAL TYPES */
+export const GLOBAL_SET_APP1 = 'GLOBAL_SET_APP1';
