@@ -4,7 +4,7 @@ import CounterAppOne from "./components/CounterAppOne";
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
-	const CounterAppTwo = React.lazy(() => import("app2/CounterAppTwo"));
+	const CounterAppTwo = React.lazy(() => import("app2/CounterAppTwo"));console.log("initited app1's app file")
 	return(
 		<Router>
 			<Routes>

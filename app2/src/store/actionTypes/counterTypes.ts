@@ -1,0 +1,1 @@
+export const INCREMENT_APP2 = 'INCREMENT_APP2';

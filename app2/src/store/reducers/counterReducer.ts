@@ -1,12 +1,12 @@
 import { AnyAction } from 'redux';
 
 import {
-    INCREMENT
+    INCREMENT_APP2
 } from '../actionTypes/counterTypes';
 import { Counter } from '../types';
 
 const countReducerState: Counter = {
-   app1Count:0
+   app2Count:1
 };
 
 const countReducer = (
@@ -14,10 +14,10 @@ const countReducer = (
     action: AnyAction
 ): Counter => {
     switch (action.type) {
-        case INCREMENT:
+        case INCREMENT_APP2:
             return {
                 ...state,
-                app1Count:action.payload
+                app2Count:action.payload
             };
         default:
             return state;

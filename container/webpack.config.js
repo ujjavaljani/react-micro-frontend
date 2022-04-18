@@ -69,6 +69,10 @@ module.exports = (env, argv) => {
             eager: true,
             requiredVersion: deps["react-dom"],
           },
+          'react-redux': {
+            singleton: true,
+            version: deps['react-router-dom']
+          }
         },
       }),
       new HtmlWebpackPlugin({

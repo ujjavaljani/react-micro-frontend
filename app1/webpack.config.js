@@ -56,6 +56,7 @@ module.exports = (env, argv) => {
         exposes: {
           // expose each component
           "./CounterAppOne": "./src/components/CounterAppOne",
+          "./CountAppOneReducer": "./src/store/reducers/counterReducer",
         },
         remotes: {
           app2: isProduction ? process.env.PROD_APP2 : process.env.DEV_APP2,

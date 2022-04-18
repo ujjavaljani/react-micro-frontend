@@ -1,14 +1,19 @@
 import { Box, Center, Flex, Heading, Spinner, Image, /*Link, */ Text } from "@chakra-ui/react";
 import React,{useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { changeFilter } from "../store/actions/counterActions";
+import CounterAppOne from "app1/CounterAppOne";
+import { RootState } from "../store/reducer";
 
-const CounterAppOne = React.lazy(() => import("app1/CounterAppOne"));
+// const CounterAppOne = React.lazy(() => import("app1/CounterAppOne"));
 const CounterAppTwo = React.lazy(() => import("app2/CounterAppTwo"));
 var version = process.env.BUILD_DATE;
 
 const Counter = () => {
     const [count, setCount] = useState(0);
-    
+    const dispatch = useDispatch();
+	const incrementBy = useSelector((state:RootState)=>state.counter.incrementBy)
     return (
         <>
 		<Center
@@ -33,6 +38,10 @@ const Counter = () => {
 				backgroundColor="#6F60EA"
 			>
 				<Heading color="#fff">CONTAINER</Heading>
+				<select onChange={(e)=>{dispatch(changeFilter(e.target.value))}}>
+					<option value="1" selected>1</option>
+					<option value="2">2</option>
+				</select>
 				<Flex direction="row" justifyContent="space-around">
 					<React.Suspense fallback={<Spinner size="xl" />}>
 						<Box
@@ -45,7 +54,10 @@ const Counter = () => {
 							<Heading color="#6F60EA" mb="1rem">
 								APP-1
 							</Heading>
-							<CounterAppOne />
+							<CounterAppOne config={{
+								isContainerApp: true,
+								incrementBy : incrementBy
+							}}  />
 							<Link to="app1">ONLY APP1</Link>
 						</Box>
 					</React.Suspense>

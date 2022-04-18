@@ -1,5 +1,4 @@
 
 export interface Counter {
-    incrementBy:number
+    app2Count:number
 };
-

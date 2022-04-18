@@ -1,16 +1,12 @@
 import { AnyAction } from 'redux';
 
 import {
-    GLOBAL_SET_APP1,
-    GLOBAL_SET_APP2,
+    CHANGE_INCREMENT_COUNTER,
 } from '../actionTypes/counterTypes';
 import { Counter } from '../types';
 
 const countReducerState: Counter = {
-    count:{
-        app1:0,
-        app2:0
-    }
+    incrementBy:1
 };
 
 const countReducer = (
@@ -18,22 +14,11 @@ const countReducer = (
     action: AnyAction
 ): Counter => {
     switch (action.type) {
-        case GLOBAL_SET_APP1:
+        case CHANGE_INCREMENT_COUNTER:
             return {
                 ...state,
-                count:{
-                    ...state.count,
-                    app1:action.payload
-                }
+                incrementBy:action.payload
             };
-            case GLOBAL_SET_APP2:
-                return {
-                    ...state,
-                    count:{
-                        ...state.count,
-                        app2:action.payload
-                    }
-                };
         default:
             return state;
     }
